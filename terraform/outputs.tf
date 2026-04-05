@@ -20,3 +20,21 @@ output "resource_group_location" {
   description = "Location of the resource groups"
   value       = module.resource_group.location
 }
+
+# -------------------------------------------------------
+# Networking
+# -------------------------------------------------------
+output "vnet_id" {
+  description = "ID of the Virtual Network"
+  value       = module.networking.vnet_id
+}
+
+output "aks_subnet_id" {
+  description = "ID of the AKS subnet"
+  value       = module.networking.aks_subnet_id
+}
+
+output "private_endpoint_subnet_id" {
+  description = "ID of the private endpoint subnet"
+  value       = module.networking.private_endpoint_subnet_id
+}
