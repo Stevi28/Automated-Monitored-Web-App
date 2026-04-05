@@ -11,6 +11,7 @@ env:
   ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
   ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
   ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
+  TF_VAR_budget_alert_email: ${{ secrets.BUDGET_ALERT_EMAIL }}
 
 jobs:
   terraform-plan:
