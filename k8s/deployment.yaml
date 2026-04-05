@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: app
-          image: ${{ secrets.DOCKERHUB_USERNAME }}/cloud-native-app:${{ github.sha }}
+          image: stevi28/cloud-native-app:latest
           ports:
             - containerPort: 80
 ---
