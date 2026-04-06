@@ -43,3 +43,30 @@ module "acr" {
   ]
 }
 
+# -------------------------------------------------------
+# AKS
+# -------------------------------------------------------
+module "aks" {
+  source = "./modules/compute"
+
+  project_name               = var.project_name
+  environment                = var.environment
+  location                   = var.location
+  resource_group_name        = module.resource_group.app_name
+  kubernetes_version         = var.kubernetes_version
+  aks_tier                   = var.aks_tier
+  aks_subnet_id              = module.networking.aks_subnet_id
+  acr_id                     = module.acr.id
+
+  system_node_count   = var.system_node_count
+  system_node_vm_size = var.system_node_vm_size
+  user_node_min_count = var.user_node_min_count
+  user_node_max_count = var.user_node_max_count
+  user_node_vm_size   = var.user_node_vm_size
+
+  depends_on = [
+    module.networking,
+    module.acr
+  ]
+}
+

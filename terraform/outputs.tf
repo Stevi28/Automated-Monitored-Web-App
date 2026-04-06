@@ -51,3 +51,17 @@ output "acr_id" {
   description = "ID of the ACR"
   value       = module.acr.id
 }
+
+# -------------------------------------------------------
+# AKS
+# -------------------------------------------------------
+output "aks_cluster_name" {
+  description = "Name of the AKS cluster"
+  value       = module.aks.cluster_name
+}
+
+output "aks_kube_config" {
+  description = "Kubernetes config"
+  value       = module.aks.kube_config
+  sensitive   = true
+}
