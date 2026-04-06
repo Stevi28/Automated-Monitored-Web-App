@@ -38,3 +38,16 @@ output "private_endpoint_subnet_id" {
   description = "ID of the private endpoint subnet"
   value       = module.networking.private_endpoint_subnet_id
 }
+
+# -------------------------------------------------------
+# ACR
+# -------------------------------------------------------
+output "acr_login_server" {
+  description = "Login server for ACR"
+  value       = module.acr.login_server
+}
+
+output "acr_id" {
+  description = "ID of the ACR"
+  value       = module.acr.id
+}
