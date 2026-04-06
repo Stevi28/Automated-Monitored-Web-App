@@ -36,6 +36,7 @@ module "acr" {
   resource_group_name        = module.resource_group.app_name
   sku                        = var.acr_sku
   private_endpoint_subnet_id = module.networking.private_endpoint_subnet_id
+  vnet_id                    = module.networking.vnet_id
 
   depends_on = [
     module.networking
