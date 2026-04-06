@@ -49,14 +49,14 @@ module "acr" {
 module "aks" {
   source = "./modules/compute"
 
-  project_name               = var.project_name
-  environment                = var.environment
-  location                   = var.location
-  resource_group_name        = module.resource_group.app_name
-  kubernetes_version         = var.kubernetes_version
-  aks_tier                   = var.aks_tier
-  aks_subnet_id              = module.networking.aks_subnet_id
-  acr_id                     = module.acr.id
+  project_name        = var.project_name
+  environment         = var.environment
+  location            = var.location
+  resource_group_name = module.resource_group.app_name
+  kubernetes_version  = var.kubernetes_version
+  aks_tier            = var.aks_tier
+  aks_subnet_id       = module.networking.aks_subnet_id
+  acr_id              = module.acr.id
 
   system_node_count   = var.system_node_count
   system_node_vm_size = var.system_node_vm_size
