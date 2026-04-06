@@ -19,7 +19,7 @@ resource "azurerm_kubernetes_cluster" "main" {
     node_count      = var.system_node_count
     vm_size         = var.system_node_vm_size
     vnet_subnet_id  = var.aks_subnet_id
-    zones           = ["1", "2", "3"]
+    zones           = ["1"]
     os_disk_size_gb = 128
 
     only_critical_addons_enabled = true
@@ -65,7 +65,7 @@ resource "azurerm_kubernetes_cluster_node_pool" "user" {
   kubernetes_cluster_id = azurerm_kubernetes_cluster.main.id
   vm_size               = var.user_node_vm_size
   vnet_subnet_id        = var.aks_subnet_id
-  zones                 = ["1", "2", "3"]
+  zones                 = ["1"]
   os_disk_size_gb       = 128
 
   enable_auto_scaling = true
