@@ -76,19 +76,19 @@ variable "system_node_vm_size" {
 variable "user_node_min_count" {
   description = "Minimum number of nodes in user node pool"
   type        = number
-  default     = 2
+  default     = 1
 }
 
 variable "user_node_max_count" {
   description = "Maximum number of nodes in user node pool"
   type        = number
-  default     = 5
+  default     = 2
 }
 
 variable "user_node_vm_size" {
   description = "VM size for user node pool"
   type        = string
-  default     = "Standard_D4s_v3"
+  default     = "Standard_D2s_v3"
 }
 
 # -------------------------------------------------------
